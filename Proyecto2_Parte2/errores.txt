@@ -1,0 +1,11 @@
+No se encontraron errores lexicos.
+
+--- Analisis sintactico ---
+Error sintactico en linea 1, columna 19: se esperaba '(' (fuera de las funciones solo puede haber funciones); se encontro '='.
+Error sintactico en linea 5, columna 5: se esperaba una sentencia (las declaraciones van al inicio del cuerpo); se encontro 'inteiro'.
+Error sintactico en linea 6, columna 18: se esperaba un operador relacional (==, !=, >, <, >= o <=); se encontro ')'.
+Error sintactico en linea 9, columna 17: se esperaba una constante entera; se encontro '_n'.
+Error sintactico en linea 15, columna 1: se esperaba otra funcion (flutuador, inteiro o assinado) o el fin del archivo; se encontro '_contador'.
+
+Total de errores sintacticos: 5
+El archivo NO es sintacticamente correcto.

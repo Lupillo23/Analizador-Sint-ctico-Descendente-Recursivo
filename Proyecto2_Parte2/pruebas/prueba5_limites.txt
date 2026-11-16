@@ -1,0 +1,15 @@
+inteiro _contador = 0;
+
+inteiro _principal(inteiro _n) {
+    _contador = 1;
+    inteiro _tarde;
+    se (_contador) #
+        quebrar;
+    #
+    para _i [1, _n] #
+        _contador += _i;
+    #
+    retorno _contador;
+}
+
+_contador = 2;

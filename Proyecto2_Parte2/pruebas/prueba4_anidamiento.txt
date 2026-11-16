@@ -1,0 +1,27 @@
+inteiro _fibonacci(inteiro _n) {
+    inteiro _a = 0, _b = 1, _temp;
+    se (_n <= 1) #
+        retorno _n;
+    #
+    para _i [2, 30] #
+        _temp = _a + _b;
+        _a = _b;
+        _b = _temp;
+        se (_b > [_limite(_n, (-1))] * 2) #
+            fazer #
+                enquanto (_temp >= 1 && [_par(_temp)] == 1) #
+                    _temp /= 2;
+                    trocar (_temp): #
+                        caso (0) {
+                            quebrar;
+                        }
+                        () {
+                            [_mostrar({"resto " & _temp}, [_sumar(_a, _b)] % 10)]
+                        }
+                    #
+                #
+            # enquanto (!{_temp == 0});
+        #
+    #
+    retorno ([_sumar(_a, [_sumar(_b, 1)])] - _temp) * (_n + 1);
+}

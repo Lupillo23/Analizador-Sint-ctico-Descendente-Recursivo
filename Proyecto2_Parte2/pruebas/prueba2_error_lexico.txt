@@ -1,0 +1,6 @@
+inteiro _principal() {
+    inteiro _x = 5;
+    _x = _x $ 2;
+    _año = 3;
+    retorno _x;
+}

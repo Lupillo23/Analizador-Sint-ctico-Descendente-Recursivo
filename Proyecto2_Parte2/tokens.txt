@@ -1,0 +1,54 @@
+
+==================================================================
+ TOKENS (clase, valor)                       total: 48
+==================================================================
+   No.  Clase        Valor   Componente          Lexema
+ -----  -----  -----------   ------------------  ------------
+     1      4            5   Palabra reservada   inteiro
+     2      5            0   Identificador       _contador
+     3      7            0   Op. asignacion      =
+     4      3            0   Constante entera    0
+     5      6           59   Simbolo especial    ;
+     6      4            5   Palabra reservada   inteiro
+     7      5            1   Identificador       _principal
+     8      6           40   Simbolo especial    (
+     9      4            5   Palabra reservada   inteiro
+    10      5            2   Identificador       _n
+    11      6           41   Simbolo especial    )
+    12      6          123   Simbolo especial    {
+    13      5            0   Identificador       _contador
+    14      7            0   Op. asignacion      =
+    15      3            1   Constante entera    1
+    16      6           59   Simbolo especial    ;
+    17      4            5   Palabra reservada   inteiro
+    18      5            3   Identificador       _tarde
+    19      6           59   Simbolo especial    ;
+    20      4            9   Palabra reservada   se
+    21      6           40   Simbolo especial    (
+    22      5            0   Identificador       _contador
+    23      6           41   Simbolo especial    )
+    24      6           35   Simbolo especial    #
+    25      4            7   Palabra reservada   quebrar
+    26      6           59   Simbolo especial    ;
+    27      6           35   Simbolo especial    #
+    28      4            6   Palabra reservada   para
+    29      5            4   Identificador       _i
+    30      6           91   Simbolo especial    [
+    31      3            1   Constante entera    1
+    32      6           44   Simbolo especial    ,
+    33      5            2   Identificador       _n
+    34      6           93   Simbolo especial    ]
+    35      6           35   Simbolo especial    #
+    36      5            0   Identificador       _contador
+    37      7            1   Op. asignacion      +=
+    38      5            4   Identificador       _i
+    39      6           59   Simbolo especial    ;
+    40      6           35   Simbolo especial    #
+    41      4            8   Palabra reservada   retorno
+    42      5            0   Identificador       _contador
+    43      6           59   Simbolo especial    ;
+    44      6          125   Simbolo especial    }
+    45      5            0   Identificador       _contador
+    46      7            0   Op. asignacion      =
+    47      3            2   Constante entera    2
+    48      6           59   Simbolo especial    ;

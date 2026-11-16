@@ -1,0 +1,68 @@
+PROYECTO 2, PARTE 2 - ANALIZADOR LEXICO + ANALIZADOR SINTACTICO DESCENDENTE RECURSIVO
+Compiladores - Equipo: Baños Monjaraz Jose Guadalupe, Castañeda Carrasco Luisa Valentina,
+Solis Espinosa Pedro Alberto
+
+ARCHIVOS
+  analizador.l   Analizador lexico (Flex) del proyecto 1, ahora genera tambien los atomos
+                 (con linea y columna) y llama al analizador sintactico.
+  parser.h       Estructura Atomo y prototipo de analizar_sintaxis().
+  parser.c       Analizador sintactico: una funcion por cada no terminal (42).
+  pruebas/       Cinco archivos de prueba (ver abajo).
+
+COMPILAR (terminal de MSYS2 MinGW, dentro de la carpeta del proyecto)
+  flex analizador.l
+  gcc lex.yy.c parser.c -o analizador
+
+EJECUTAR
+  ./analizador pruebas/prueba1_valida.txt
+
+  En pantalla aparecen, en este orden: los errores lexicos (si hay), los tokens, la tabla
+  de simbolos, la tabla de literales, la secuencia de atomos (con su linea, columna y
+  lexema) y el resultado del analisis sintactico.
+  Ademas se generan tokens.txt, tabla_simbolos.txt, tabla_literales.txt, atomos.txt y
+  errores.txt (errores lexicos, errores sintacticos y el resultado final).
+
+PRUEBAS Y RESULTADO ESPERADO
+  prueba1_valida.txt
+      Usa todas las sentencias, operadores y formas de expresion de la gramatica.
+      Esperado: sin errores lexicos; "El archivo es sintacticamente correcto."
+
+  prueba2_error_lexico.txt
+      Contiene $ y una ñ, que no pertenecen al lenguaje.
+      Esperado: 3 errores lexicos ($ en linea 3; ñ y la o que queda suelta en linea 4)
+      y "No se realizo el analisis sintactico porque hubo errores lexicos."
+
+  prueba3_errores_sintacticos.txt
+      Lexicamente correcto, con 6 errores de estructura.
+      Esperado: 6 errores sintacticos, uno por cada error:
+        linea 1:  falta la coma entre los dos argumentos
+        linea 3:  falta el operando entre + y *
+        linea 5:  falta el ; al final de la linea 4 (se detecta en el primer atomo de la 5)
+        linea 8:  falta el # que cierra el se
+        linea 11: falta el operador relacional en la condicion del enquanto
+        linea 14: falta la expresion despues del =
+
+  prueba4_anidamiento.txt  (prueba adicional)
+      Sentencias anidadas en cinco niveles (para > se > fazer > enquanto > trocar) y
+      llamadas a funcion dentro de expresiones, de parametros y de retorno.
+      Esperado: "El archivo es sintacticamente correcto."
+
+  prueba5_limites.txt  (prueba adicional)
+      Cosas que parecen validas pero la gramatica no permite.
+      Esperado: 5 errores sintacticos:
+        linea 1:  variable declarada fuera de una funcion
+        linea 5:  declaracion despues de una sentencia
+        linea 6:  condicion sin operador relacional
+        linea 9:  identificador en el rango del para (solo se permiten constantes)
+        linea 15: sentencia fuera de una funcion
+
+CAMBIOS A LA GRAMATICA
+  Regla 72: <listas> se toma como <listaS>.
+  Regla 80: <opCad> -> & <expCad>  (antes h <expCad>). En la tabla del Anexo A el
+            operador & produce el atomo &; h es el atomo de &&. La gramatica sigue
+            siendo LL(1).
+
+NOTAS
+  - La columna cuenta caracteres desde 1; un tabulador cuenta como una columna.
+  - Despues de un error no se informa otro hasta consumir un atomo correctamente, para
+    evitar mensajes en cascada. La recuperacion se explica al inicio de parser.c.

@@ -1,0 +1,15 @@
+inteiro _calcular(inteiro _a inteiro _b) {
+    inteiro _r = 0, _s;
+    _r = _a + * _b;
+    _s = _r * 2
+    se (_r > 10) #
+        _r -= 1;
+    retorno _r;
+}
+
+assinado _mostrar() {
+    enquanto (_s 5) #
+        quebrar;
+    #
+    _s = ;
+}
